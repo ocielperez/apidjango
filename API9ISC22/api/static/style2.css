@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left, .center, .right {
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.center {
+  flex: 2;
+  background-color: #ffffff;
+}
+
+.right {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.profile-photo {
+  width: 80%;
+  height: 150px;
+  margin: 20px auto;
+  background: url("{% static 'profile.jpg' %}") center/cover;
+  border-radius: 50%;
+}
+
+.search {
+  background-color: #1877f2;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.post {
+  background: white;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.right ul {
+  list-style-type: none;
+}
+
+/* Estilo responsivo */
+@media only screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .left, .center, .right {
+      width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Kitchen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static 'style3.css' %}'> 
+</head>
+<body>
+    <div class="register-container">
+        <h1>Nuevo Usuario</h1>
+
+        <!-- Agregado para mostrar mensajes de error -->
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+        
+        <form action="" method="post">
+            {% csrf_token %}  <!-- Asegúrese de incluir esta línea para seguridad -->
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            <span id="ageMessage" style="display:none;">Debes ser mayor de 18 años para registrarte.</span> <!-- Agregado style="display:none;" -->
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            <button type="submit" class="submit-button">Guardar</button>
+        </form>
+        <a href="{% url 'raiz' %}">
+            <button id="backButton" class="back-button">Regresar</button>
+        </a>        
+    </div>  
+    
+    <script>
+        document.getElementById('fecha_nacimiento').onchange = function () {
+            var inputDate = new Date(this.value);
+            var currentDate = new Date();
+            var age = currentDate.getFullYear() - inputDate.getFullYear();
+            var m = currentDate.getMonth() - inputDate.getMonth();
+
+            if (m < 0 || (m === 0 && currentDate.getDate() < inputDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                document.getElementById('ageMessage').style.display = 'block';
+            } else {
+                document.getElementById('ageMessage').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

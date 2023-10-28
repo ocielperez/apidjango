@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>The Kitchen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static 'style.css' %}'> 
+    <script src='{% static 'main.js' %}'></script> <!-- Asegúrate de que esta ruta esté correcta -->
+</head>
+<body>
+    <div class="title-container">
+        <h2>The Kitchen</h2>
+    </div>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/962/906/non_2x/roasted-or-baked-turkey-on-a-platter-food-for-thanksgiven-day-in-cute-cartoon-for-your-design-free-vector.jpg" alt="Logo of The Kitchen with a cartoon turkey">
+        </div>
+        <h1>Iniciar Sesión</h1>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input type="email" id="email" name="username" placeholder="Correo Electrónico" required>
+            <input type="password" id="contraseña" name="password" placeholder="Contraseña" required>
+            
+            <div class="button-container">
+                <button type="submit">Iniciar Sesión</button>
+                <button type="button" class="google-login">Iniciar con Google</button>
+            </div>
+        </form>        
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="opciones">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <span> | </span>
+            <a href="{% url 'registro' %}">Crear una cuenta</a>
+        </div>
+    </div>
+</body>
+</html>

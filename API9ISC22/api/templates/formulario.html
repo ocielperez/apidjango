@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Respuestas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        button[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Espacio entre elementos del formulario */
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulario de Respuestas</h1>
+        <form method="POST" action="{% url 'formulario' %}">
+            {% csrf_token %}
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+            
+            <label for="respuesta1">Respuesta 1:</label>
+            <input type="number" id="respuesta1" name="respuesta1" required>
+
+            <label for="respuesta2">Respuesta 2:</label>
+            <input type="number" id="respuesta2" name="respuesta2" required>
+
+            <label for="respuesta3">Respuesta 3:</label>
+            <input type="number" id="respuesta3" name="respuesta3" required>
+            
+            <button type="submit">Enviar Respuestas</button>
+        </form>
+    </div>
+
+    <!-- (Tu código JavaScript aquí si es necesario) -->
+
+</body>
+</html>

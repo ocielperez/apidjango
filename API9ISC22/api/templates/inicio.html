@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para el ícono de la lupa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>The Kitchen</title>
+    <style>
+        /* Estilo personalizado para los contactos */
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilos para la barra de búsqueda */
+        .search-input {
+            border-radius: 30px 0 0 30px !important;
+            border-right: none !important;
+        }
+
+        .search-btn {
+            border-radius: 0 30px 30px 0 !important;
+            background-color: #99EB63;
+        }
+
+        /* Colores de sección para identificación */
+        .profile-section {
+            background-color: #EDEDED;
+        }
+
+        .posts-section {
+            background-color: #FAFAFA;
+        }
+
+        .contacts-section {
+            background-color: #E5E5E5;
+        }
+
+        /* Estilos para centrar y ajustar la longitud de la barra de búsqueda */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sección izquierda: Foto de perfil y datos del usuario -->
+            <aside class="col-md-3 profile-section py-3">
+                <div class="d-flex justify-content-center">
+                    <div class="profile-photo m-3" style="background: url('https://i.pinimg.com/236x/0a/9b/5c/0a9b5ce32ad8aefb1b57cfc416aac995.jpg') no-repeat center; width: 150px; height: 150px; border-radius: 50%;"></div>
+                </div>
+                <h3 class="text-center">Alejandro Tuercas</h3>
+                <ul class="list-unstyled ps-3">
+                    <li>Email: arcticmonkeys@gmail.com</li>
+                    <li>Ubicación: Chimalhuacan, Mexico</li>
+                    <li>Fecha de nacimiento: 01/01/1990</li>
+                </ul>
+                <!-- Contenedor de botones -->
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-block mt-3">Editar Perfil</a>
+                    <a href="#" class="btn btn-danger btn-block mt-3">Eliminar Perfil</a>
+                </div>
+
+            </aside>
+
+            <!-- Sección central: Búsqueda, publicaciones y actividades -->
+            <main class="col-md-6 posts-section py-3">
+                <!-- Contenedor de búsqueda -->
+                <div class="search-container mt-3">
+                    <div class="input-group search-box">
+                        <input type="text" class="form-control search-input" placeholder="Buscar perfil...">
+                        <button class="btn search-btn rounded-end" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Tres botones de colores, con menos espacio entre ellos -->
+                <div class="search-container mt-3 d-flex justify-content-between">
+                    <a href="#" class="btn btn-primary rounded">Botón Azul</a>
+                    <a href="#" class="btn btn-success rounded">Botón Verde</a>
+                    <a href="#" class="btn btn-danger rounded">Botón Rojo</a>
+                </div>
+                <br>
+                <!-- Ejemplo de publicaciones -->
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Examen</h5>
+                        <p class="card-text">Aplicación examen sorpresa!</p>
+                        <button class="btn btn-light">👍 Me gusta</button>
+                        <button class="btn btn-light">💬 Comentar</button>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <img src="https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/238372/13bff5829e5388fdee6dfb7f56142426.jpg" class="card-img-top" alt="Imagen de la publicación">
+                    <div class="card-body">
+                        <h5 class="card-title">Gran Bailazo</h5>
+                        <p class="card-text">6 Octubre 2023</p>
+                        <button class="btn btn-light">👍 Me gusta</button>
+                        <button class="btn btn-light">💬 Comentar</button>
+                    </div>
+                </div>
+
+                <!-- Segundo ejemplo de publicación -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Día en el parque</h5>
+                        <p class="card-text">Pasé un gran día en el parque con amigos. ¡Disfrutando de la naturaleza!</p>
+                        <button class="btn btn-light">👍 Me gusta</button>
+                        <button class="btn btn-light">💬 Comentar</button>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- Sección derecha: Lista de contactos y grupos -->
+            <aside class="col-md-3 contacts-section py-3">
+                <h4>Contactos</h4>
+                <ul class="list-unstyled">
+                    <li class="contact-item">
+                        <img src="https://faroutmagazine.co.uk/static/uploads/1/2022/11/The-song-that-makes-Arctic-Monkeys-Matt-Helders-22feel-sick22-1140x855.jpg" alt="Juan Pérez" class="contact-img">
+                        <a href="#" class="text-dark text-decoration-none">Martin Jerga</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="https://i.pinimg.com/736x/d7/6e/36/d76e364c75ca2768fe5c4bf72b818e2d.jpg" alt="Maria Rodríguez" class="contact-img">
+                        <a href="#" class="text-dark text-decoration-none">Jaime Cocina</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Nick_O%E2%80%99Malley_May_20%2C_2011_part_2cr.jpg" alt="Luis González" class="contact-img">
+                        <a href="#" class="text-dark text-decoration-none">Nick Ohara</a>
+                    </li>
+                </ul>
+
+                <h4>Grupos</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="fw-bold">Amantes de la Música</span> (6 miembros)
+                        <a href="#" class="btn btn-primary btn-sm float-end">Unirse</a>
+                    </li>
+                    <!-- Agregar más grupos aquí -->
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <div>
+       
+
+
+    
+
+    <div>
+        <div>
+            
+            <canvas id="myChart"></canvas>
+          </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <script>
+            const ctx = document.getElementById('myChart');
+          
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ['10', '9', '8',],
+                datasets: [{
+                  label: 'Encuesta pregunta de Calificaciones',
+                  data: [{{count_10}},{{count_9}},{{count_8<}}],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+          </script>
+    </div>
+    <h4>
+        {% for registro in registros %}
+            <tr>
+            <td>{{ registro.id }}</td>
+            <td>{{ registro.nombre }}</td>
+            <td>{{ registro.edad }}</td>
+            <td>{{ registro.respuesta1 }}</td>
+            </tr>
+        {% endfor %}
+    </h4>
+</body>
+
+</html>
