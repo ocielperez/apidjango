@@ -64,16 +64,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'API9ISC22.wsgi.application'
-
+#gunicorn API9ISC22.wsgi:application
 # Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'teschi',
+        'USER': 'ociel2023',
+        'PASSWORD': 'YSMlUkUZfI1A6Hv2sBEitzsvB9Li3Ymx',
+        'HOST': 'oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
